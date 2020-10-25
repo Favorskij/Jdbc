@@ -3,6 +3,8 @@ package com.testjdbc.repository;
 import com.testjdbc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -35,6 +37,22 @@ public class MyRepository {
         String sql = "SELECT email FROM user WHERE token=?";
         return jdbcTemplate.queryForObject(sql, new Object[] { name }, String.class);
 
-
     }
+
+
+//    public void insertList(List<User> users) {
+//        String sql = "insert into User (firstName, lastName) VALUES (:firstName, :lastName)";
+//
+//        SqlParameterSource[] params = new SqlParameterSource[users.size()];
+//        int i = 0;
+//        for (User user : users) {
+//            MapSqlParameterSource p = new MapSqlParameterSource();
+//            p.addValue("firstName", user.getFirstName());
+//            p.addValue("lastName", user.getLastName());
+//            params[i] = p;
+//            i++;
+//        }
+//
+//        jdbcTemplate.batchUpdate(sql, params);
+//    }
 }
