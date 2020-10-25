@@ -2,6 +2,7 @@ package com.testjdbc.repository;
 
 import com.testjdbc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -54,5 +55,21 @@ public class MyRepository {
 //        }
 //
 //        jdbcTemplate.batchUpdate(sql, params);
+//    }
+
+
+//    public List<User> getAll() {
+//        return jdbcTemplate.query(
+//                "select * from users",
+//                new BeanPropertyRowMapper<>(User.class)
+//        );
+//    }
+//
+//    public User getOne(String email) {
+//        return jdbcTemplate.query(
+//                "select * from users where email = ?",
+//                new Object[] { email },
+//                new BeanPropertyRowMapper<>(User.class)
+//        ).stream().findAny().orElse(null);
 //    }
 }
