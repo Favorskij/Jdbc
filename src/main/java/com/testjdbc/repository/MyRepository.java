@@ -40,6 +40,10 @@ public class MyRepository {
 
     }
 
+//    public List<String> findMenuNames() {
+//        List<String> menuNameList = jdbcTemplate.queryForList("SELECT firstName, username FROM user where username", String.class);
+//        return menuNameList;
+//    }
 
 //    public void insertList(List<User> users) {
 //        String sql = "insert into User (firstName, lastName) VALUES (:firstName, :lastName)";
